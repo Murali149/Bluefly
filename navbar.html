@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/d77fc7c028.js" crossorigin="anonymous"></script>
+    <style>
+        #navBar{
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        #navBar>div{
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: space-around;
+           margin-bottom: 15px;
+           
+        }
+           
+
+        #logoUserNavBar>div:nth-child(1){
+            flex-grow: 1;
+            /* border: 1px solid black; */
+        }
+
+        #logoUserNavBar>div:nth-child(2){
+            display: flex;
+            flex-grow: 1;
+            justify-content: flex-end;
+            /* border: 1px solid black; */
+        }
+
+        #logoUserNavBar>div:nth-child(2)>img{
+            width: 200px;
+        }
+
+        #logoUserNavBar>div:nth-child(3){
+            display: flex;
+            flex-grow: 1;
+            justify-content:flex-end;
+            align-items: flex-end;
+            /* border: 1px solid black; */
+        }
+           
+
+        #logoUserNavBar>div:nth-child(3)>img{
+            width: 40px;
+            height: 30px;
+            padding-right: 30px;
+        }
+
+            
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* #catageryNavBar {
+            overflow: hidden;
+            background-color: ;
+        }  */
+
+        #catageryNavBar a {
+            float: left;
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: black;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown:hover .dropbtn{
+            border-bottom: 2px solid black;
+        }
+
+        /* #catageryNavBar a:hover, .dropdown:hover .dropbtn {
+            background-color: red;
+        } */
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            /* display: flex;
+            flex-direction: column; */
+        } 
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            /* align-items:center;
+            justify-content:flex-start; */
+            /* margin: auto; */
+            /* display: flex;
+            flex-direction: column; */
+
+        }
+
+        .dropdown:hover .dropdown-content {
+            /* display: block; */
+            width: 95%;
+            justify-content:space-evenly;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            
+            margin: auto;
+            /* float: left; */
+        }
+
+
+
+        .dropdown:hover .dropdown-content>.dropdown-content-catagerys{
+            display: flex;
+            flex-direction: column;
+        }
+
+
+
+        /* #catageryNavBar{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        } */
+
+
+        #catageryNavBar>div{
+            padding: 5px;
+           
+        }
+
+      /* THIS IS FOR BODY PAGE   */
+        
+      #container{
+            text-align: center;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+
+        #para{
+            width: 70%;
+            margin: auto;
+            font-size: 20px;
+            /* font-family: Futura Std Book; */
+            margin-bottom: 20px;
+        }
+
+        #productsDiv{
+            display: flex;
+            flex-flow: row wrap;
+            width: 100%;
+            border: 1px solid black;
+            justify-content: space-evenly;
+            /* margin-bottom: 40px; */
+        }
+           
+        #productsDiv>div{
+            width: 15%;
+            padding: 1%;
+            margin: 10px;
+            /* border: 1px solid black; */
+        }
+        img{
+            width: 100%;
+            height: 70%;
+            /* height: 180PX; */
+        }
+        #productsDiv>div>h3{
+            font-weight: 500;
+            text-align:bottom;
+            text-overflow: ellipsis;
+            
+
+        }
+        #offersDiv{
+            width: 100%;
+            color: #f5f5f6;
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #offersDiv>div{
+            /* display: flex;
+            flex-flow: wrap column;
+            vertical-align: bottom;
+            align-content: flex-end; */
+            width: 25%;
+            padding: 0px 55px;
+            margin: 3% 2%;
+            text-align: center;
+            
+        }
+
+        .offerDivOne{
+            background-image: url("https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Dresses_d9649021-bd86-44f6-b36f-ab83fa227028_300x.jpg?v=1615206993");
+            background-repeat: no-repeat;
+            /* background-size: 471px 983px; */
+            background-size: contain;
+            height: 600px;
+            border:  1px solid red;
+        }
+
+        .offerDivTwo{
+            background-image: url("https://th.bing.com/th/id/OIP.9hGG2wWZACKeH7APYonzwAHaJ3?w=182&h=243&c=7&r=0&o=5&dpr=1.25&pid=1.7");
+            background-repeat: no-repeat;
+            background-size: 471px 983px;
+            background-size: contain;
+            /* height: 500px; */
+        }
+
+
+        .offerDivThree{
+            background-image: url("//cdn.shopify.com/s/files/1/0248/3473/6191/files/womens_tops_2_1800x.jpg?v=1630508297");
+            background-repeat: no-repeat;
+            background-size: 471px 983px;
+            background-size: contain;
+            /* height: 800px; */
+        }
+
+
+        #offersDiv>div>h3{
+            font-weight: 500;
+        }
+        /* #offersDiv>div>h1{
+
+        } */
+        #offersDiv>div>h2{
+            font-weight: 500;
+        }
+        #offersDiv>div>h4{
+            padding: 5px;
+            background-color: white;
+            color: black;
+            font-weight: 540;
+            
+            
+        }
+
+        /* THIS IS FOR FOOTER */
+
+
+        #footer{
+            width: 100%;
+            /* height:500px; */
+            background-color: #e6e6e6;
+            padding: 50px 30px; 
+            display: flex;
+            
+            
+        }
+ 
+        #footer>div{
+            display: flex;
+            flex-direction: column;
+            /* width: 40%; */
+        } 
+
+        #aboutUs{
+            display: flex;
+            /* width: 60%; */
+            flex-direction: row;
+            margin-right: 150px;
+        }
+
+        .footerHeadings{
+            font-size: large;
+        }
+        p{
+            font-size: 17px;
+        }
+        #aboutUs p:hover{
+            font-weight: 700;
+        }
+
+        .tags{
+            width: 300px;
+            height: 35px;
+            font-size: 16px;
+        }
+        button{
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            padding: 5px;
+        }
+        img{
+            width: 300px;
+            margin-top: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="navBar">
+        
+        <div id="logoUserNavBar">
+            <div></div>
+            <div>
+                <img src="https://logodix.com/logo/1595967.png" alt="">
+            </div>
+            <div>
+                <input type="search" >
+                <!-- <i class="far fa-user"></i> -->
+                <img src="https://img.icons8.com/ios/50/000000/user--v1.png"/>
+                <img src="https://img.icons8.com/ios/50/000000/shopping-bag--v1.png"/>
+
+            </div>
+        </div>
+
+        <div id="catageryNavBar">
+            <div class="dropdown">
+                <div id="shoes" class="dropbtn">SHOES</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="product.html">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="handbags" class="dropbtn">HANDBAGS & ACCESSOTIES</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>ALL HANDBAGS</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Backpacks</a>
+                        <a href="">Bucket Bags</a>
+                        <a href="">Clutches</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>TOP DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Celine</a>
+                        <a href="">Chloe</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>PRO OWNED</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Bucket Bags</a>
+                        <a href="">Clutches</a>
+                        <a href="">Crossbody Bags</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>ACCESSOTIES</h5></a>
+                        <a href="">Belts</a>
+                        <a href="">Hats</a>
+                        <a href="">Gloves</a>
+                        <a href="">Sunglasses</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="designers" class="dropbtn">DESIGNERS</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="women" class="dropbtn">WOMEN</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="men" class="dropbtn">MEN</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="sunglasss" class="dropbtn">SUNGLASSES</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="jewelry" class="dropbtn">JEWELRY & WATCHES</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="under$50" class="dropbtn">UNDER $50</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="beauty" class="dropbtn">BEAUTY</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <div id="clearance" class="dropbtn">CLEARANCE</div>
+                <div class="dropdown-content">
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Espadrilles</a>
+                        <a href="">Flats</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>WOMEN'S DESIGNERS</h5></a>
+                        <a href="">Burberry</a>
+                        <a href="">Chloe</a>
+                        <a href="">Christian louboutin</a>
+                        <a href="">Dolce & gabbana</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                    <div class="dropdown-content-catagerys">
+                        <a href=""><h5>MEN'S SHOES</h5></a>
+                        <a href="">Shop All</a>
+                        <a href="">Boots</a>
+                        <a href="">Slippers</a>
+                        <a href="">Sneakers</a>
+                    </div>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+            
+            
+            
+    <div id="container">
+        <div #firstDiv>
+            <div></div>
+            <p id="para">
+                Bluefly is the fashion destination for the style obsessed. Shop thousands of luxury brands & hundreds of thousands of br styles at a great discount. 
+            </p>
+            <hr>
+        </div>
+    
+        <div>
+            <h1>SHOP BY CATAGORY</h1>
+            <div id="productsDiv">
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1411034980_RLLZ_1_360x.jpg?v=1639147857" alt="">
+                    <h3>DRESSES</h3>
+                </div>
+                <div>
+                    <img src="//cdn.shopify.com/s/files/1/0248/3473/6191/products/1313020085_RLLZ_1_400x.jpg?v=1639173865" alt="">
+                    <h3>PUMPS & HEELS</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1885912_360x.jpg?v=1637852292" alt="">
+                    <h3>HANDBAGS</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/SoStellaire-1-1N5FF-1_360x.jpg?v=1628917499" alt="">
+                    <h3>SUNGLASSES</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/8f593ac8-3f8b-43c7-a514-44cceecabe50_360x.jpg?v=1627405644" alt="">
+                    <h3>WOMEN'S SNEAKERS</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1887885_360x.jpg?v=1636435874" alt="">
+                    <h3>MEN'S SNEAKERS</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/f9dad4c9-d8f8-4ca9-a32d-2c45df5fe251_360x.jpg?v=1625182499" alt="">
+                    <h3>MEN'S T-SHIRTS</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2054297_180x.jpg?v=1635663002" alt="">
+                    <h3>WOMEN'S TOPS</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/gFYGMJNHi0MgYKtebomRgP2Gu8kFTBGa-25_360x.jpg?v=1638861815" alt="">
+                    <h3>WOMEN'S DENIM</h3>
+                </div>
+                <div>
+                    <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/products/tb8040rose-11_b26d5a1c-9f7e-45b8-ae93-8f8f17aeb59f_360x.jpg?v=1634340453" alt="">
+                    <h3>JEWELRY</h3>
+                </div>
+                <!-- <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div> -->
+            </div>
+
+            <div id="offersDiv">
+                <div class="offerDivOne">
+                    <h3>DRESSES FOR OCCASION</h3>
+                    <h1>UP TO 90% OFF</h1>
+                    <h2>Featuring Aqua, BCBGMaxazria, Aidan Matox, & more</h2>
+                    <h4>SHOP DRESSES</h4>
+                </div>
+                <div class="offerDivTwo">
+                    <h3>MENS'S CLOTHING & ACCESSOTIES</h3>
+                    <h1>UP TO 85% OFF</h1>
+                    <h2>Styles from Burberry, Ricj Owens, Amiri, Gucci & More</h2>
+                    <h4>SHOP MEN'S CLOTHING</h4>
+                    <h4>SHOP MEN'S ACCESSOTIES</h4>
+                </div>
+                <div class="offerDivThree">
+                    <h3>TRENDING TOPS FOR THE NEW SEASON</h3>
+                    <h1>UP TO 85% OFF</h1>
+                    <h2>Featuring Gracis,Theory, Trina Turk & more</h2>
+                    <h4>SHOP WOMEN'S TOPS</h4>
+                </div>
+                <!-- <div></div>
+                <div></div> -->
+            </div>
+        </div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>   
+    
+    
+
+
+
+
+    <div id="footer">
+        <div id="aboutUs"> 
+            
+            <div >
+                <p class="footerHeadings">ABOUT US</p>
+                <p>Contact Us</p>
+                <p>Frequently Asked Questions</p>
+                <p>Shipping & Returns</p>
+                <p>Gift Cards</p>
+                
+            </div>
+            <div>
+                <p>.</p>
+                <p>Pre-Owned Guide</p>
+                <p>Sell on Bluefly</p>
+                <p>Privacy Policy</p>
+                <p>Terms & conditions</p>
+            </div>
+            
+        </div>
+            
+            
+
+        <div id="signinSave"> 
+            <P class="footerHeadings">SIGN UP  AND  SAVE</P>
+            <br>
+            <p>Subscribe to get exclusive offers on designer brands</p>
+            <br>
+            <input class="tags" type="email" placeholder="Enter your email">
+            <br>
+            <button class="tags">Subscribe</button>
+
+            <div>
+                <img src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Untitled_2_.png_5_x104@2x.png?v=1620852820" alt="">
+                <h6>@2021 Bluefly 1998-2020 BLUEFLY.COM OR ITS AFFILIATES ALL RIGHTS RESERVED</h6>
+            </div>
+            
+        </div>
+    </div>
+            
+            
+            
+            
+            
+</body>
+</html>
+
+<script>
+    // document.querySelector("#").addEventListener("click", function(){
+    //     window.location.href = "";
+    // });
+    
+
+
+
+</script>

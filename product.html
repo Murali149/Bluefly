@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #womensShowsAllProductPage{
+            width: 80%;
+            border: 1px solid black;
+            display: flex;
+            margin: auto;
+        }
+
+        .filtersDiv{
+            width: 20%;
+            height: 600px;
+            margin-right: 10px;
+            border: 1px solid rgb(54, 51, 51);
+        }
+
+        .productsDiv{
+            width: 80%;
+            border: 1px solid black;
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        /* .productBox{
+            width: 18%;
+            height: 300px; 
+            border: 1px solid black;
+        } */
+            
+    </style>
+</head>
+<body>
+    <div id="womensShowsAllProductPage">
+        <div class="filtersDiv"></div>
+        <div class="productsDiv">
+            
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var productData = [
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1311313224_RLLZ_2_large.jpg?v=1638517332",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Stuart Weitzman",
+            name:"STUART WEITZMAN JOCKY SUEDE OVER-THE-KNEE BOOT",
+            price:"$261.79 - $287.49",
+            save:"Save 67%"
+        },
+
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1311946568_RLLZ_2_large.jpg?v=1639117269",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Stuart Weitzman",
+            name:"STUART WEITZMAN WILLA LEATHER BOOT",
+            price:"$230.99 - $329.99",
+            save:"Save 70%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1311478894_RLLZ_2_large.jpg?v=1638892550",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Stuart Weitzman",
+            name:"STUART WEITZMAN REDDY 5050 LEATHER OVER-THE-KNEE BOOT",
+            price:"$261.79 - $287.49",
+            save:"Save 53%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1463086_large.jpg?v=1636498143",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Givenchy",
+            name:"GIVENCY BOOTS EDEN WOMEN LEATHER BLACK",
+            price:"$261.79   $287.49",
+            save:"Save 22%"
+        },
+        {
+            imgUrl:"",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Stuart Weitzman",
+            name:"STUART WEITZMAN JOCKY SUEDE OVER-THE-KNEE BOOT",
+            price:"$261.79 - $287.49",
+            save:"Save 67%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/QpKEWPXcMKWWdXnWJslyUsNJXPzdJ7Mu-25_large.jpg?v=1639582627",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Charles David",
+            name:"COLLECTOR WOMENS SUEDE ANKLE HEEL SANDALS",
+            price:"37.99 - $73.99",
+            save:"Save 83%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/2019222_c151f68e-900f-420c-8e69-4300057da54e_large.jpg?v=1636500082",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Gucci",
+            name:"ANJLE BOOT WITH GG DETAIL",
+            price:"$1058   $828.09",
+            save:"Save 22%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1311784215_RLLZ_2_large.jpg?v=1639170359",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Stuart Weitzman",
+            name:"STUART WEITZMAN LAINE SUEDE COMBAT BOOT",
+            price:"$675   $328.89",
+            save:"Save 51%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/tz8V3aHJPTGT6JhxdpuojuLdUfO1f7ZX-25_large.jpg?v=1639095564",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Thalia Sodi",
+            name:"THALIA SODI WOMENS RAJEL POINTED TOE STILETTO OVER-THE-KNEE BOOTS",
+            price:"$28.99 - $50.99",
+            save:"Save 71%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/RkYGsY8wi5kymBBuiSwuWKrmEb9W9uW8-25_large.jpg?v=1639515367",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Cole Haan",
+            name:"COLE HAAN WOMENS MARA GRAND CALF HAIR ANKELE CHELSEA BOOTS",
+            price:"$220   $64.99",
+            save:"Save 70%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/0HcVUwbrFBj1HDjw2Ed3LqbFc1p5gHox-25_large.jpg?v=1639559451",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Nike",
+            name:"AIR HUARACHE CITY WOMENS FITNESS PERFORMANCE BASKETBALL SHOES",
+            price:"$59.99 - $110.99",
+            save:"Save 57%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313120779_RLLZ_2_large.jpg?v=1639099047",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Saint Laurent",
+            name:"SAINT LAURENT BLEACH SANDAL",
+            price:"$1059    $1,055.99",
+            save:"Save 4%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/1313001682_RLLZ_2_large.jpg?v=1639136833",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Saint Laurent",
+            name:"SAINT LAURENT TRIBUTE LEATHER SANDAL",
+            price:"$261.79 - $287.49",
+            save:"Save 67%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/H9kFoZqkZSsxqGf33CvEtLRGrHxWMY1a-25_large.jpg?v=1639743445",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Charles David",
+            name:"ARAMINA WOMENS LEATHER POINTED TOE KITTEN HEELS",
+            price:"$53.99 - $58.99",
+            save:"Save 75%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/K5AxHJXUcNAbxlvB5g4blXPrnfPafByl-25_large.jpg?v=1639721745",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Aqua College",
+            name:"ISLA WOMENS SUEDE BLOCK HEEL ANKLE BOOT",
+            price:"$36.99 - $91.99",
+            save:"Save 93%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/fDSHPeyWPiAaLpeLg06PrIa8RL54wuyh-25_large.jpg?v=1638668720",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Circus By Sam Edelman",
+            name:"CIRCUS BY SAM EDELMAN WOMENS KIRBY BOOTIES",
+            price:"$25.99 - $63.99",
+            save:"Save 75%"
+        },
+        {
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/qH6ysT7ZWvzSW4nZNYsC4G60KCJmkUSi-25_large.jpg?v=1638885978",
+            cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
+            brand:"Cole Haan",
+            name:"COLE HAAN WOMENS THE GO TO LEATHER SLIP ON LOAFERS",
+            price:"$38.99 - $52.99",
+            save:"Save 76%"
+        }
+    ];
+
+    
+    // console.log(productData)
+    localStorage.setItem("arrProductObjects" , JSON.stringify(productData));
+
+    // console.log(JSON.parse(localStorage.getItem("arrProductObjects")) )
+    var productDetails = JSON.parse(localStorage.getItem("arrProductObjects")) 
+    // displayProduct(productData);
+
+    // console.log(arrProductObjects)
+
+
+
+    // function displayProduct(taskArr){
+        // document.querySelector("#productBox").innerHTML = "";
+
+        productDetails.map(function(item, index ){
+            var div = document.createElement("div");
+            div.setAttribute("class", "productBox")
+
+            var img = document.createElement("img");
+            img.setAttribute("src", item.imgUrl);
+
+
+            var CartTotalOff = document.createElement("p");
+            CartTotalOff.textContent = item.cartTotalOff;
+            CartTotalOff.setAttribute("clas", "cartTotalOff")
+
+            var Brand = document.createElement("p");
+            Brand.textContent = item.brand;
+            Brand.setAttribute("class", "brand");
+
+
+            var Name = document.createElement("p");
+            Name.textContent = item.name;
+            Name.setAttribute("clas", "name")
+
+            var  Price = document.createElement("p");
+            Price.textContent = item.price;
+            Price.setAttribute("class", "price");
+
+            var  Save = document.createElement("p");
+            Save.textContent = item.save;
+            Save.setAttribute("class", "save");
+
+            // var button = document.createElement("button");
+            // button.textContent = "Add to Cart";
+            // button.setAttribute("class", "button");
+            // button.addEventListener("click", addToCart())
+
+       
+            div.append(img,CartTotalOff, Brand,Name,Price, Save)
+            document.querySelector(".productsDiv").append(div)
+            
+        })
+    // };
+            
+            
+
+
+
+
+        
+</script>
+    

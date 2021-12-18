@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        #signUpContainer{
+            width: 400px;
+            margin: auto;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+           
+
+        }
+        input{
+
+            padding: 10px;
+            width: 300px;
+            /* height: 40px; */
+            margin-bottom: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        #subscribe{
+            width: 20px;
+        }
+           
+       
+    </style>
+</head>
+<body>
+    <div id="signUpContainer">
+        <h1>CREATE ACCOUNT</h1>
+        <form action="" id="signUpForm">
+            <label for="">FIRST NAME</label>
+            <br>
+            <input type="text">
+            <br>
+           
+
+            <label for="">LAST NAME</label>
+            <br>
+            <input type="text">
+            <br>
+
+            <label for="">EMAIL</label>
+            <br>
+            <input type="email">
+            <br>
+
+            <label for="">PASSWORD</label>
+            <br>
+            <input type="password">
+            <br>
+
+            <input type="checkbox" id="subscribe" name="subscribe" value="Bike">
+            <label for="subscribe">Subscribe to stay updated with new offers!</label>
+            <br>
+            
+            <input type="submit" value="CREATE">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    document.querySelector("#signUpForm").addEventListener("submit", addTask);
+
+        function addTask(event){
+            event.preventDefault();
+
+            var userData{}
+
+            var name = document.querySelector("#name").value;
+            var quantity = document.querySelector("#quantity").value;
+            var priroty = document.querySelector("#priroty").value;
+
+
+
+
+
+            
+
+            //    console.log(name,quantity,priroty)
+
+            var row = document.createElement("tr");
+
+
+            var td1 = document.createElement('td');
+            td1.textContent = name;
+
+            var td2 = document.createElement('td');
+            td2.textContent = quantity;
+
+            var td3 = document.createElement('td');
+            td3.textContent = priroty;
+            if(priroty == "High"){
+                td3.style.backgroundColor= "red";
+            }
+
+            var td4 = document.createElement('td');
+            td4.textContent ="Delete";
+            td4.addEventListener("click", deleteTask);
+                function deleteTask(event){
+                    event.target.parentNode.remove();
+                }
+
+
+
+
+
+            row.append(td1,td2,td3,td4);
+            tbody = document.querySelector("tbody")
+            tbody.append(row);
+
+        }
+</script>

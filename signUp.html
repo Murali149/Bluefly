@@ -30,6 +30,21 @@
         #subscribe{
             width: 20px;
         }
+
+        #create{
+            background-color: black;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+        }
+        a{
+            width: 100%;
+            border: 1px solid black;
+            padding: 5px 120px;
+            background-color: black;
+            color: white;
+            font-weight: 700;
+        }
            
        
     </style>
@@ -40,45 +55,62 @@
         <form action="" id="signUpForm">
             <label for="">FIRST NAME</label>
             <br>
-            <input type="text">
+            <input type="text" id="firstName">
             <br>
            
 
             <label for="">LAST NAME</label>
             <br>
-            <input type="text">
+            <input type="text" id="lastName">
             <br>
 
             <label for="">EMAIL</label>
             <br>
-            <input type="email">
+            <input type="email" id="email">
             <br>
 
             <label for="">PASSWORD</label>
             <br>
-            <input type="password">
+            <input type="password" id="password">
             <br>
 
-            <input type="checkbox" id="subscribe" name="subscribe" value="Bike">
+            <input type="checkbox" id="subscribe" name="subscribe" >
             <label for="subscribe">Subscribe to stay updated with new offers!</label>
             <br>
             
-            <input type="submit" value="CREATE">
+            <a href="navbar.html"> CREATE</a>
         </form>
     </div>
 </body>
 </html>
 <script>
     document.querySelector("#signUpForm").addEventListener("submit", addTask);
-
+        var userCredentials = [];
         function addTask(event){
             event.preventDefault();
 
-            var userData{}
+            
+            var FirstName = document.querySelector("#firstName").value;
+            var LastName = document.querySelector("#lastName").value;
+            var Email = document.querySelector("#email").value;
+            var Password = document.querySelector("#password").value;
+            var Select = document.querySelector("#subscribe").value;
+            
+            var userData = {
+                firstname:FirstName,
+                lastname:LastName,
+                Password:Password,
+                email:Email
+            };
 
-            var name = document.querySelector("#name").value;
-            var quantity = document.querySelector("#quantity").value;
-            var priroty = document.querySelector("#priroty").value;
+            userCredentials.push(userData)
+
+            localStorage.setItem JSON.stringify("("userDetails","userCredentials")");
+
+
+
+
+
 
 
 

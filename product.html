@@ -28,6 +28,19 @@
             flex-flow: row wrap;
         }
 
+        .productBox{
+            width: 23%;
+            /* align-content: center; */
+        }
+
+        img{
+            width:100%
+        }
+
+        button{
+            padding: 5px 10px;
+        }
+
         /* .productBox{
             width: 18%;
             height: 300px; 
@@ -38,7 +51,10 @@
 </head>
 <body>
     <div id="womensShowsAllProductPage">
-        <div class="filtersDiv"></div>
+        <div class="filtersDiv">
+            <p>filter by price</p>
+
+        </div>
         <div class="productsDiv">
             
         </div>
@@ -82,7 +98,7 @@
             save:"Save 22%"
         },
         {
-            imgUrl:"",
+            imgUrl:"https://cdn.shopify.com/s/files/1/0248/3473/6191/products/qH6ysT7ZWvzSW4nZNYsC4G60KCJmkUSi-25_large.jpg?v=1638885978",
             cartTotalOff:"CARTS ABOVE $99 GET 10% OFF",
             brand:"Stuart Weitzman",
             name:"STUART WEITZMAN JOCKY SUEDE OVER-THE-KNEE BOOT",
@@ -231,13 +247,15 @@
             Save.textContent = item.save;
             Save.setAttribute("class", "save");
 
-            // var button = document.createElement("button");
-            // button.textContent = "Add to Cart";
+            var button = document.createElement("button");
+            button.textContent = "Add to Cart";
             // button.setAttribute("class", "button");
             // button.addEventListener("click", addToCart())
+            // var line =  document.createElement("hr");
+            
 
        
-            div.append(img,CartTotalOff, Brand,Name,Price, Save)
+            div.append(img,CartTotalOff, Brand,Name,Price, Save,button)
             document.querySelector(".productsDiv").append(div)
             
         })

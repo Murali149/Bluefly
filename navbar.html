@@ -158,6 +158,14 @@
            
         }
 
+        /* CAROUSAL */
+
+        #imgSlider {
+            width: 100%;
+            height: 700px
+            /* border-radius: 15px; */
+        }
+
       /* THIS IS FOR BODY PAGE   */
         
       #container{
@@ -328,7 +336,7 @@
                 <img src="https://logodix.com/logo/1595967.png" alt="">
             </div>
             <div>
-                <input type="search" >
+                <input type="search" placeholder="Search" >
                 <!-- <i class="far fa-user"></i> -->
                 <img src="https://img.icons8.com/ios/50/000000/user--v1.png"/>
                 <img src="https://img.icons8.com/ios/50/000000/shopping-bag--v1.png"/>
@@ -690,7 +698,14 @@
         </div>
     </div>
 
-            
+    <div id="parent">
+        <img
+          id="imgSlider"
+          src="https://cdn.shopify.com/s/files/1/0248/3473/6191/files/Valentino_1400x.jpg?v=1630420054"
+          ,
+          alt=""
+        />
+    </div>        
             
             
     <div id="container">
@@ -834,16 +849,8 @@
             
             
             
-            
+    <div></div>
 </body>
 </html>
 
-<script>
-    // document.querySelector("#").addEventListener("click", function(){
-    //     window.location.href = "";
-    // });
-    
-
-
-
-</script>
+<script src="carousal.js"></script>
